@@ -1,0 +1,85 @@
+.App {
+  text-align: center;
+}
+
+.form-container{
+  width: max-content;
+  border: 1px solid black;
+  padding: 30px;
+  border-radius: 4px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.inputfield{
+  height: 30px;
+  border: 0.5px solid grey;
+  border-radius: 4px;
+  width: 100%;
+  /* width: max-content; */
+}
+
+.field-flexcontainer{
+  display: flex;
+  gap: 2em;
+}
+
+.inputfieldcontainer{
+  display: flex;
+  flex-direction: column;
+  /* justify-content: center; */
+  align-items: center;
+  flex: 100%;
+}
+
+.fieldlabel{
+  font-size: 90%;
+  color: rgb(70, 70, 180);
+}
+
+select,
+select option {
+  color: #353535;
+}
+
+select:invalid,
+select option[value=""] {
+  color: grey;
+}
+
+/* label {
+  display: block;
+  margin: 16px 0;
+} */
+
+/*Added for browser compatibility*/
+[hidden] {
+  display: none;
+}
+
+.btn{
+  padding-left: 15px;
+  padding-right: 15px;
+  height: 30px;
+  background-color: #277999;
+  border: transparent;
+  border-radius: 3px;
+  color: white;
+  cursor: pointer;
+}
+
+.btn:disabled{
+  border: 1px solid #999999;
+  background-color: #cccccc;
+  color: #666666;
+}
+
+.error{
+  font-size: 80%;
+  color: red;
+}
+
+.error::before{
+  content: '⚠';
+  color: red;
+}
