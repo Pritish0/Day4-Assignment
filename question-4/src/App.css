@@ -1,0 +1,15 @@
+.App {
+  text-align: center;
+}
+
+.dashboard{
+  display: flex;
+}
+
+.sidenav{
+  flex: 30%
+}
+
+.main{
+  flex: 70%;
+}
