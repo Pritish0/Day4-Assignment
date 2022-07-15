@@ -25,11 +25,14 @@ function App() {
 
   useEffect(() => {
     let validForm = true;
-    for (const item in formdata) {
-      if(formdata[item]===""){
-        validForm = false;
-      }  
+    if(formdata['emailId']===""||formdata['securityQuestion']===""||formdata['securityAnswer']===""){
+      validForm = false;
     }
+    // for (const item in formdata) {
+    //   if(formdata[item]===""){
+    //     validForm = false;
+    //   }  
+    // }
     for (const item in error) {
       if(error[item]!==""){
         validForm = false;
@@ -44,7 +47,10 @@ function App() {
     switch(e.target.name){
       case 'firstName':
         newFormData['firstName'] = e.target.value;
-        if(!(/^[a-zA-Z]+$/.test(e.target.value))){
+        if(e.target.value===""){
+          newError['firstName'] = ""
+        }
+        else if(!(/^[a-zA-Z]+$/.test(e.target.value))){
           newError['firstName'] = "Should only contain letters"
         }
         else if(!(e.target.value.length>=3 && e.target.value.length<=15)){
@@ -56,7 +62,10 @@ function App() {
         break;
       case 'lastName':
         newFormData['lastName'] = e.target.value;
-        if(!(/^[a-zA-Z]+$/.test(e.target.value))){
+        if(e.target.value===""){
+          newError['lastName'] = ""
+        }
+        else if(!(/^[a-zA-Z]+$/.test(e.target.value))){
           newError['lastName'] = "Should only contain letters"
         }
         else if(!(e.target.value.length>=3 && e.target.value.length<=15)){
@@ -98,7 +107,10 @@ function App() {
         break;
       case 'bio':
         newFormData['bio'] = e.target.value;
-        if(!(e.target.value.length>15)){
+        if(e.target.value===""){
+          newError['bio'] = ""
+        }
+        else if(!(e.target.value.length>15)){
           newError['bio'] = "Letter count should be greater 15"
         }
         else{
